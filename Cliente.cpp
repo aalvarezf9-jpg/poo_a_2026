@@ -1,28 +1,34 @@
 #include "Persona.cpp"
 #include <iostream>
-
 using namespace std;
-//nombre de la clase
-class cliente : persona{
-	//Atributos
-	private :
-		string nit;
-	//Constructores
-	public :
-		cliente(){
-			
-		}
-		cliente(string nom, string ape, string dir, int tel, string fn, string n) : persona(nom,ape,dir,fn,tel){
-			nit = n;
-		}
-	//metodos
-	void leer(){
-		cout<<"Nit: "<<nit<<endl;
-		cout<<"Nombres: "<<nombres<<endl;
-		cout<<"Apellidos: "<<apellidos<<endl;
-		cout<<"Direccion: "<<direccion<<endl;
-		cout<<"Telefono: "<<telefono<<endl;
-		cout<<"Fecha Nacimiento: "<<fecha_nacimiento<<endl;
-	}
+
+class Cliente : Persona {
+    //atributos
+    private : string nit;
+
+    //constructor
+    public : 
+    Cliente (){
+    }
+    Cliente (string nom,string ape,string dir,int tel,string n) : Persona(nom,ape,dir,tel){
+        nit = n;
+    }
+    //metodos
+    //set (modificar)
+    void setNit(string n){nit = n;}
+    void setNombres(string nom){nombres = nom;}
+    void setApellidos(string ape){apellidos = ape;}
+    void setDireccion(string dir){direccion = dir;} 
+    void setTelefono(int tel){telefono = tel;}   
+    //get (mostrar)
+    string getNit(){return nit;}
+    string getNombre(){return nombres;}
+    string getApellidos(){return apellidos;}
+    string getDireccion(){return direccion;}
+    int getTelefono(){return telefono;}
+    //metodo
+    void mostrar(){
+        cout<<"_____________"<<endl;
+        cout<<nit<<","<<nombres<<","<<apellidos<<","<<direccion<<","<<telefono<<endl;
+    }
 };
-	
